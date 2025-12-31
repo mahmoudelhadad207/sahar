@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>معرض خاص</title>
+  <style>
+    body {
+      background:#111;
+      color:white;
+      text-align:center;
+      font-family:Arial;
+    }
+    input, button {
+      padding:10px;
+      margin:10px;
+    }
+    .gallery img {
+      width:200px;
+      margin:10px;
+      border-radius:10px;
+      display:none; /* الصور مخفية في البداية */
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <h2>ادخل الباسورد</h2>
+  <input type="password" id="pass" placeholder="الباسورد">
+  <button onclick="login()">دخول</button>
+</div>
+
+<div class="gallery">
+  <h2>📸 الصور</h2>
+  <img src="images/1.jpg">
+  <img src="images/2.jpg">
+  <img src="images/3.jpg">
+</div>
+
+<script>
+function login() {
+  var pass = document.getElementById("pass").value;
+  var correct = "1512003"; // الباسورد اللي انت عايزه
+
+  if (pass === correct) {
+    alert("تمام ✅ الباسورد صح!");
+    document.querySelector(".login-box").style.display = "none";
+    var imgs = document.querySelectorAll(".gallery img");
+    imgs.forEach(img => img.style.display = "inline-block");
+  } else {
+    alert("باسورد غلط ❌");
+  }
+}
+</script>
+
+</body>
+</html>
